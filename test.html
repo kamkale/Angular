@@ -1,0 +1,19 @@
+<script src="angular.min.js">
+</script>
+<script>
+app=angular.module("mya",[])
+app.controller("c1",function($scope,$interval){
+$scope.arr=["img1.jpg","img2.jpg","img3.jpg","del.jpg"]
+$scope.i=0
+$scope.iname="img1.jpg"
+$interval(function(){
+$scope.i++
+if($scope.i==4)
+$scope.i=0
+$scope.iname=$scope.arr[$scope.i]
+},2000)
+})
+</script>
+<body ng-app="mya" ng-controller="c1">
+
+<img src="{{iname}}" width="100" height="70">
